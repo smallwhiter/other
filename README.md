@@ -87,3 +87,40 @@ bash ocserv.sh -use password
 
 > 来源：https://moeclub.org/2017/06/22/268/
 
+## 在Debian部署Transmission和h5ai
+
+- 特别注意:
+- h5ai默认密码: MoeClub.org  
+- Transmission默认用户名: MoeClub.org  
+- Transmission默认密码: Vicer  
+
+
+- 下载:  
+```
+wget --no-check-certificate -qO '/tmp/OneKeyForPT.sh' 'https://github.com/smallwhiter/other/blob/master/OneKeyForPT.sh'
+```
+
+- 运行:
+```
+bash /tmp/OneKeyForPT.sh -L 'http://domain.ltd' -U 'User' -P 'Passwd'
+```
+
+- 使用方法:
+```
+Usage:
+        bash OneKeyForPT.sh     -L/--url 'http:/moeclub.org'  
+                                -U/--UserName 'MoeClub.org'  
+                                -P/--PassWord 'Vicer'  
+```
+
+###h5ai二维码功能(默认为关闭状态)
+- 打开二维码功能
+```
+sed -i 's|"qrcode":.*|"qrcode": true,|g' '/data/www/_h5ai/private/conf/options.json'
+```
+- 关闭二维码功能
+```
+sed -i 's|"qrcode":.*|"qrcode": false,|g' '/data/www/_h5ai/private/conf/options.json'
+```
+
+> 来源：https://moeclub.org/2017/05/08/191/#
